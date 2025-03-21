@@ -42,7 +42,7 @@ def get_latest_sms():
     return None
 
 def send_sms_to_webhook(sms):
-    """Send SMS data to a Discord webhook."""
+    """Send SMS data to a webhook."""
     message_text = clean_message(sms["body"])
     payload = {
         "content": f"📩 **New SMS Received**\n**From:** {sms['number']}\n**Message:** {message_text}"
@@ -53,7 +53,7 @@ def send_sms_to_webhook(sms):
     try:
         response = requests.post(SMS_WEBHOOK_URL, json=payload, headers=headers)
         if response.status_code == 200 or response.status_code == 204:
-            print(f"✅ Sent to Discord: {sms}")
+            print(f"✅ Sent to: {sms}")
         else:
             print(f"❌ Failed to send: {response.status_code} - {response.text}")
     except Exception as e:
