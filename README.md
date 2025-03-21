@@ -22,7 +22,7 @@ This guide explains how to run a persistent Python script (e.g., an SMS responde
 
 1. **Termux** (latest from [F-Droid](https://f-droid.org/packages/com.termux/))
 2. **Termux:API** ([F-Droid](https://f-droid.org/packages/com.termux.api/))
-3. Python script ready to run (e.g., `sms_notifier.py`)
+3. Python script ready to run (e.g., `sms-forward.py`)
 
 Install required packages:
 
@@ -37,7 +37,7 @@ Your service must live inside:
 
     ~/.termux/services/<service-name>/run
 
-For example, to run `~/scripts/sms_notifier.py` as a service named `sms`:
+For example, to run `~/scripts/sms-forward.py` as a service named `sms`:
 
 ---
 
@@ -52,7 +52,7 @@ Paste the following:
 
     #!/data/data/com.termux/files/usr/bin/sh
     termux-wake-lock
-    python ~/scripts/sms_notifier.py
+    python ~/scripts/sms-forward.py
 
 > 🔁 `termux-wake-lock` keeps the script alive even with the screen off.
 
@@ -143,4 +143,4 @@ If `sv-enable` fails with "unable to change to service directory":
 
 ## 🛠 Example Service Repo
 
-Feel free to fork this repo and place your script at `~/scripts/sms_notifier.py`. Add config or logging as needed!
+Feel free to fork this repo and place your script at `~/scripts/sms-forward.py`. Add config or logging as needed!
