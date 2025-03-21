@@ -1,9 +1,13 @@
 # 📱 Persistent Python Service on Android via Termux
 
 Intends to send the latest sms message to a webhook from a particular sender.
-Only tested on Samsung android with termux.
-No guarantees
-Report 🦟
+This is for trade alerts coming from a source.
+You can run multiple instances of this script since it's only designer for one sender and one webhook.
+Only runs on market days and pre/post market hours
+
+- Only tested on Samsung android with termux.
+- No guarantees
+- Report 🦟
 
 This guide explains how to run a persistent Python script (e.g., an SMS responder, trading notifier, etc.) on your Android device using [Termux](https://f-droid.org/packages/com.termux/) with `termux-services`.
 
